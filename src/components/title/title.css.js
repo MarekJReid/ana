@@ -3,6 +3,16 @@ import MEDIA from 'helpers/mediaTemplates';
 
 export const Text = styled.span`
   display: block;
+   margin-bottom: ${({ marginBottom }) => () => {
+    switch (marginBottom) {
+      case 'normal':
+        return '2.25rem';
+        case 'large':
+        return '3.25rem';
+      default:
+        return '2.25rem';
+    }
+  }};
   font-weight: ${({ size }) => () => {
     switch (size) {
       case 'large':

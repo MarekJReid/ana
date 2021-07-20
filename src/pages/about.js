@@ -4,17 +4,12 @@ import { graphql } from 'gatsby';
 import Layout from 'components/layout';
 import Box from 'components/box';
 import Head from 'components/head';
+import Hero from 'containers/hero'; 
 
-const About = ({ data }) => (
+const About = ({ data, image }) => (
   <Layout>
-    <Head pageTitle={data.aboutJson.title} />
-    <Box>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.aboutJson.content.childMarkdownRemark.html,
-        }}
-      />
-    </Box>
+    <Hero image="https://source.unsplash.com/GaprWyIw66o/1600x900" />
+    
   </Layout>
 );
 

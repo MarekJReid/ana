@@ -1,34 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'components/layout';
-import Box from 'components/box';
-import Title from 'components/title';
-import Gallery from 'components/gallery';
-import IOExample from 'components/io-example';
-import Modal from 'containers/modal';
+import Intro from 'components/page-components/landing/intro';
+import Services from 'components/page-components/landing/services/services';
 import { graphql } from 'gatsby';
+import Hero from 'containers/hero';
 
-const Index = ({ data }) => (
-  <Layout>
-    <Box>
-      <Title as="h2" size="large">
-        {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
-      </Title>
-      <Modal>
-        <video
-          src="https://i.imgur.com/gzFqNSW.mp4"
-          playsInline
-          loop
-          autoPlay
-          muted
-        />
-      </Modal>
-    </Box>
-    <Gallery items={data.homeJson.gallery} />
-    <div style={{ height: '50vh' }} />
-    <IOExample />
-  </Layout>
-);
+const Index = ({ data }) => {
+  return (
+          <Layout>
+            <Hero image="https://source.unsplash.com/I2YSmEUAgDY/1600x900"/>
+            <div style={{ height: '20vh' }} />
+            <Intro galleryItems={data.homeJson.gallery}/>
+            <Services/>
+          </Layout>
+)};
 
 Index.propTypes = {
   data: PropTypes.object.isRequired,
@@ -58,5 +44,4 @@ export const query = graphql`
         }
       }
     }
-  }
-`;
+  }`

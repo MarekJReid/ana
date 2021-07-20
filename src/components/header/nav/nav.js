@@ -8,8 +8,14 @@ const Nav = () => (
       <li>
         <Link to="/about">About</Link>
       </li>
+       <li>
+        <Link to="/workshops">Workshops</Link>
+      </li>
+        <li>
+        <Link to="/physiotherapy">physiotherapy</Link>
+      </li>
       <li>
-        <a href="https://github.com/fabe/gatsby-universal">GitHub</a>
+        <a href="https://www.instagram.com/vera.waldow/?hl=en">Instagram</a>
       </li>
     </ul>
   </Container>
